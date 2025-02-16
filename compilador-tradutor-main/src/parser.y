@@ -145,7 +145,7 @@ comando:
         { /* Declaracao implicita: se nao existir, insere com tipo BOOLEANO */
             if(lookupSymbol($1) != NULL) {
                 // yyerror("Variavel ja declarada");
-                exit(1);
+                //exit(1);
             }
         insertSymbol($1, TYPE_BOOL, 0);
             printf("%s = digitalRead(%s);\n", $1, $4); free($1); free($4); }
