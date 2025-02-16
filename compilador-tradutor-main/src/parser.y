@@ -143,10 +143,6 @@ comando:
     | MUDAR IDENT { printf("digitalWrite(%s, ", $2); free($2); } item { printf(");\n"); }
     | IDENT IGUAL LER_DIGITAL IDENT 
         { /* Declaracao implicita: se nao existir, insere com tipo BOOLEANO */
-            if(lookupSymbol($1) != NULL) {
-                // yyerror("Variavel ja declarada");
-                //exit(1);
-            }
         insertSymbol($1, TYPE_BOOL, 0);
             printf("%s = digitalRead(%s);\n", $1, $4); free($1); free($4); }
     | VAR BOOLEANO DOISPONTOS IDENT IGUAL LER_DIGITAL IDENT 
