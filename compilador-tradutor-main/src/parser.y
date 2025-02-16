@@ -144,7 +144,7 @@ comando:
     | IDENT IGUAL LER_DIGITAL IDENT 
         { /* Declaracao implicita: se nao existir, insere com tipo BOOLEANO */
             if(lookupSymbol($1) != NULL) {
-                yyerror("Variavel ja declarada");
+                // yyerror("Variavel ja declarada");
                 exit(1);
             }
         insertSymbol($1, TYPE_BOOL, 0);

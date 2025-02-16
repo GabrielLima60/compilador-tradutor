@@ -1719,7 +1719,7 @@ yyreduce:
 #line 145 "parser.y"
     { /* Declaracao implicita: se nao existir, insere com tipo BOOLEANO */
             if(lookupSymbol((yyvsp[(1) - (4)].str_val)) != NULL) {
-                yyerror("Variavel ja declarada");
+                // yyerror("Variavel ja declarada");
                 exit(1);
             }
         insertSymbol((yyvsp[(1) - (4)].str_val), TYPE_BOOL, 0);
